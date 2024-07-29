@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- box-icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- font awesome cdnjs link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- /css file link -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+   
+
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins','sans-serif';
+
+}
+
+:root{
+    --bg-color:#1f242d;
+    --second-bg-color:#323946;
+    --text-color:#fff;
+    --main-color:#0ef;
+}
+
+html{
+    font-size: 62.5%;
+    overflow: Auto; 
+}
+
+body{
+    background: var(--bg-color);
+    color:var(--text-color);
+}
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header .sticky{
+    border-bottom: .1rem solid rgba(0,0,0,.2);
+}
+
+.logo{
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+.logo:hover{
+    color: #0ef;
+    text-shadow:1px 1px 1px aqua;
+
+}
+
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+.navbar a:hover,
+.navbar a.active{
+    color:var(--main-color);
+}
+
+#menu-icon{
+    font-size: 3.6rem;
+    color:var(--text-color);
+    display: none;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-img img{
+    width: 30vw;
+    filter: drop-shadow(0.30rem 0.30rem 0.8rem #0ef);
+    pointer-events: none;
+    
+}
+
+.home-content h3{
+ font-size: 3.2rem;
+ font-weight: 700;
+}
+.home-content h3:nth-of-type(2){
+    margin-bottom: 2rem;
+}
+span{
+    color: var(--main-color);
+}
+
+.home-content h1{
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content p{
+    font-size: 1.7rem;
+}
+
+.social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+.social-media :hover{
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1 rem var(--main-color)
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+.btn:hover{
+    box-shadow: none;
+}
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--second-bg-color);
+}
+.about-img{
+    width: 35vw;  
+    pointer-events: none;
+}
+.heading{
+    text-align: center;
+    font-size: 4.5rem;
+}
+.about-content h2{
+    text-align: left;
+    line-height: 1.2;
+}
+.about-content h3{
+    font-size: 2.6rem;
+}
+.about-content p{
+    font-size: 2rem;
+    margin: 2rem  0  3rem;
+}
+
+.skill h2{
+    margin-bottom: 5rem;
+}
+.skill-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.skill-container .skill-box {
+    flex: 2  2  45rem;
+    background: var(--second-bg-color);
+    padding: 1.5rem 1rem 1.5rem;
+    border-radius: 3rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+}
+.skill-container .skill-box:hover{
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+.heading {
+    margin: 2rem 0 3rem;
+}
+
+.skill-box h3{
+    font-size: 2rem;
+}
+.skill-box p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem 0 1.5rem;
+}
+.Project{
+    background: var(--second-bg-color);
+}
+.Project h2{
+    margin-bottom:4rem;
+}
+
+.Project-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 2.5rem;
+    pointer-events: none;
+}
+.Project-container .Project-box{
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+.Project-box img{
+ width: 100%;
+ transition: .5s ease;
+ pointer-events: none;
+}
+.Project-box:hover img {
+    transform: scale(1.1);
+    pointer-events: none;
+}
+
+
+.Project-box .Project-layer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,.1) ,var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0  4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+.Project-box:hover .Project-layer{
+    transform: translateY(0);
+}
+.Project-layer h4{
+    font-size: 3rem;
+}
+
+.Project-layer p{
+    font-size: 2rem;
+    margin: .3rem  0  1rem;
+}
+
+.Project-layer a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+.Project-layer a i{
+    font-size: 2rem;
+    color: var(--second-bg-color);
+}
+.Contact h2 {
+  margin-bottom: 3rem; 
+    
+    
+}
+
+.Contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.Contact form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.Contact form .input-box input,
+.Contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size:1.6rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+.Contact form .input-box input {
+    width:49%;
+}
+
+.Contact form textarea {
+    resize:none;
+}
+.Contact form .btn{
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p{
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem  var(--main-color);
+}
+
+.footer-iconTop a i{
+    font-size: 2.4rem;
+    color: var(--second-bg-color);
+}
+
+
+/* BREAKPOINTS */
+@media (max-width: 952px){
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width: 1300px){
+    .header{
+       padding: 2rem 3%;
+    }
+    section {
+        padding: 10rem 3%  2ren ;
+    }
+    .skill{
+        padding-bottom: 7rem;
+    }
+    .Project{
+        padding-bottom: 7rem;
+    }
+    .Contact{
+        padding-bottom: auto;
+    }
+    .footer {
+        padding: 2rem  3%;
+    }
+}
+
+@media (max-width: 900px){
+    #menu-icon{
+        display:block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0  .5rem  1rem rgba(0,0,0,.2);
+        display: none;
+    }
+    .navbar.active{
+        display: block;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    .home{
+        flex-direction: column;
+    }
+    .home-content h3{
+        font-size: 2.6rem;
+
+    }
+    .home-content h1{
+        font-size: 5rem;
+    }
+    .home-img img{
+        width: 70vw;
+        margin: top 4rem; 
+        pointer-events: none;
+    }
+    .about{
+        flex-direction: column-reverse;
+
+    }
+    .about-img{
+        width: 70vw;
+        margin-top: 4rem;
+        pointer-events: none;
+    }
+    .Skill h2{
+      margin-bottom: 3rem;
+    }
+    .Project h2{
+        margin-bottom: 3rem;
+
+    }
+    .Project-container {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+ 
+@media (max-width: 800px){
+    .Project-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width : 800px){
+    html{
+        font-size: 50%;
+    }
+    .Contact form.input-box input {
+        width: 100%;
+    }
+
+}
+
+
+
+    </style>    <!-- header design -->
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+
+        <i class='bx bx-menu' id="menu-icon"></i> 
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#Skill">Skill</a>
+            <a href="#Project">Project</a>
+        </nav>
+    </header>
+
+    <!-- home section design -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello,It's Me</h3>
+            <h1>AHMAD RAZA</h1>
+            <h3>And I'm a <span>Flutter Developer</span></h3>
+            <p>I am a BSIT student . I am doing  Mobile App development and also doing competitive programming.</p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/ahmad-raza-kahloon-0905a42a1/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/bagga16"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/ahmed.jatt.969?utm_source=qr&igsh=MWtrYXozMnRxZXB3cg=="><i class='bx bxl-instagram-alt' ></i></a>
+            </div>
+            <!-- Add this code within your header section, before or after other navigation links -->
+            <a href="resume.pdf" target="_blank" download class="btn">Download Resume</a>
+
+
+            <!-- <a href="#" class="btn">Download CV</a> -->
+        </div>
+        <div class="home-img">
+            <img src="img2.jpeg" alt="">
+        </div>
+
+    </section>
+
+    <!-- ABout section -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="img2.jpeg" height="400" width="350" alt="">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>  Me </span></h2>
+            <h3>Flutter Developer</h3>
+            <p>I am an experienced Flutter developer with a strong foundation in server-side technologies. I excel in building robust APIs, managing databases, and optimizing server performance. My commitment is to continually enhance my backend development skills.</p>
+                         <p>If you're seeking a passionate and skilled backend developer, I am eager to take on new challenges and contribute to projects that will further enhance my expertise. I am excited about opportunities to apply my knowledge in server-side technologies. </p>
+
+        </div>
+       
+    </section>
+
+    <!-- section  Skill-->
+  
+    <section class="Skill" id="Skill">
+        <h2 class="heading"> My <span>   Skills</span></h2>
+        <div class="skill-container">
+            <div class="skill-box">
+               <h3>Skills</h3>
+               <p>API INTREGERATION</p>
+                <p>IOS DEVELOPMENT</p>
+                <p>ANDROID DEVELOPMENT</p>
+                <!-- <p></p> -->
+                <p>SDLC</p>
+                <p>FIREBASE</p>
+
+
+            </div>
+            <div class="skill-box">
+                <h3>Languages</h3>
+                <p>OOP</p>
+                <p>DSA</p>
+                <P>DART</P>
+                <p>HTML/CSS</p>
+                <p>PYTHON</p>
+                <!-- <p>Github</p> -->
+            </div>
+
+           
+            <div class="skill-box">
+                <h3>Course Work</h3>
+                <p>Object Oriented programming Langauage(OOPS)</p>
+                <p>Data Base Management System(DBMS)</p>
+                <p>Computer Networking(CN)</p>
+                <p>Flutter</p>
+                <p>Python</p>
+                <!-- <p>Basic Web Development</p></div -->
+                
+            </div>
+
+
+            
+            <!-- <div class="skill-box">
+               <h3>Certification</h3>
+                <p>F,<span>Infosys</span></p>
+                <p>Add Your certificate name ,<span>Codechef</span></p>
+                <p>Add your certificate, <span>HackerRank</span></p>
+                <p>Add your certificate name , <span>Accenture</span></p>
+                <p>Add your certificate name, <span>CareerNinja</span></p>
+            </div> -->
+            
+        </div>
+    </section>
+
+    <!-- project section -->
+    <section class="Project" id="Project">
+        <h2 class="heading">My <span>Project</span></h2>
+        <div class="Project-container">
+            <div class="Project-box">
+                <img src="img3.jpeg" height="400" width="600" alt="">
+                <div class="Project-layer">
+                    <h4>DE-taxi</h4>
+                    <p>Crafted an Amazon clone using HTML and CSS, faithfully recreating the platform's look and feel.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="Project-box">
+                <img src="img4.jpeg" height="400" width="600" alt="">
+                <div class="Project-layer">
+                    <h4>Add your project name</h4>
+                    <p>A platform where you can find links to play and
+                        download your favorite games.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="Project-box">
+                <img src="img5.jpeg" height="400" width="600" alt="">
+                <div class="Project-layer">
+                    <h4>Portfolio</h4>
+                    <p>A personal portfolio site showcasing my skills,
+                        achievements, and projects.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="Project-box">
+                <img src="img6.jpeg" height="400" width="600" alt="">
+                <div class="Project-layer">
+                    <h4>Add your project name</h4>
+                    <p>Add your project content.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section -->
+    <section class="Contact" id="Contact">
+        <h2 class="heading">Contact<span>  Me!</span></h2>
+
+        <form action="#">
+        
+            <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+            </div>
+
+            <div class="input-box">
+                <input type="Number" placeholder="Mobile Number">
+                <input type="text" placeholder="Email Subject">
+            </div>
+
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="Submit" value="send Message" class="btn">
+            
+       </form>
+    </section>
+    <!-- footer design -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p> Copyright &copy; 2024 by AHMAD RAZA | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <!-- scroll revel -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- javascript -->
+    <script>
+        // ---------toggle icon navbar----//
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+    let sections = document.querySelectorAll('section');
+    let navLinks = document.querySelectorAll('header nav a');
+
+    window.addEventListener('scroll', () => {
+        let scrollY = window.scrollY;
+
+        sections.forEach(section => {
+            let sectionTop = section.offsetTop - 150;
+            let sectionHeight = section.offsetHeight;
+            let sectionId = section.getAttribute('id');
+
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Use attribute selector with quotes
+                document.querySelector(`header nav a[href="#${sectionId}"]`).classList.add('active');
+            }
+        });
+
+        // --------------toggle sticky header-----------//
+        let header = document.querySelector('header');
+        header.classList.toggle('sticky', scrollY > 100);
+
+        // --------------remove toggle icon and navbar-----------//
+        menuIcon.classList.remove('bx-x');
+        navbar.classList.remove('active');
+    });
+});
+
+// scroll reaveal//
+
+ScrollReveal ({
+    // reset:true,
+    distance:'80px',
+    duration:2000,
+    delay:200
+});
+
+ScrollReveal().reveal('.home-content , .heading' ,{origin: 'top'});
+ScrollReveal().reveal('.home-img, .Skill-container ,.Project-box,Contact form',{origin: 'bottom'});
+ScrollReveal().reveal('.home-content h1, .about-img' ,{origin: 'left'});
+ScrollReveal().reveal('.home-content p, .about-content' ,{origin: 'right'});
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
